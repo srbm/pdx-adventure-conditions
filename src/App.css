@@ -1,10 +1,18 @@
 .App {
   text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-bottom: 5px;
 }
+ .nav {
+   margin-top: 20px;
 
-nav {
-
-}
-ul {
-  list-style-type: none;
-}
+ }
+ .nav a {
+   color: black;
+   background-color: tomato;
+   font-size: 20px;
+   margin: 0 2px;
+ }

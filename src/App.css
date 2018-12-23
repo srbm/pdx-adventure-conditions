@@ -10,9 +10,12 @@
    margin-top: 20px;
 
  }
- .nav a {
+ .nav>li>a {
    color: black;
    background-color: tomato;
    font-size: 20px;
    margin: 0 2px;
+ }
+ .nav>li>a:hover {
+   background-color: lightblue;
  }

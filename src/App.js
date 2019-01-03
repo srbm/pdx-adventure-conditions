@@ -31,8 +31,11 @@ class App extends Component {
             Wind: response.data.wind.speed,
           },
           loading: false
-        })
+        });
       })
+      .catch(error => {
+        console.log("Error fetching/parsing data.");
+      });
   }
 
   render() {
@@ -41,11 +44,11 @@ class App extends Component {
         <div className="App">
           <Header />
           <Route exact path="/" component={Home} />
-          <Route path="/mt-st-helens" render={ () => <Weather data="mtStHelens" /> } />
-          <Route path="/the-gorge" render={ () => <Weather data="theGorge" /> } />
-          <Route path="/mt-hood" render={ () => <Weather data="mtHood" /> } />
-          <Route path="/the-coast" render={ () => <Weather data="theCoast" /> } />
-          <Route path="/coastal-range" render={ () => <Weather data="coastalRange" /> } />
+          <Route path="/mt-st-helens" render={ () => <Weather city="mtStHelens" /> } />
+          <Route path="/the-gorge" render={ () => <Weather city="theGorge" /> } />
+          <Route path="/mt-hood" render={ () => <Weather city="mtHood" /> } />
+          <Route path="/the-coast" render={ () => <Weather city="theCoast" /> } />
+          <Route path="/coastal-range" render={ () => <Weather city="coastalRange" /> } />
         </div>
     </BrowserRouter>
     );

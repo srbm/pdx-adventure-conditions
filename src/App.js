@@ -26,15 +26,15 @@ class App extends Component {
       .then(response => {
         this.setState({
           weather: {
-            Temp: response.data.main.temp,
-            Weather: response.data.weather[0].description,
-            Wind: response.data.wind.speed,
+            temp: response.data.main.temp,
+            weather: response.data.weather[0].description,
+            wind: response.data.wind.speed,
           },
           loading: false
         });
       })
       .catch(error => {
-        console.log("Error fetching/parsing data.");
+        console.log("Error fetching/parsing data.", error);
       });
   }
 
@@ -43,12 +43,12 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Header />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" render={ () => <Home weather={this.state.weather} />} />
           <Route path="/mt-st-helens" render={ () => <Weather city="mtStHelens" /> } />
           <Route path="/the-gorge" render={ () => <Weather city="theGorge" /> } />
           <Route path="/mt-hood" render={ () => <Weather city="mtHood" /> } />
           <Route path="/the-coast" render={ () => <Weather city="theCoast" /> } />
-          <Route path="/coastal-range" render={ () => <Weather city="coastalRange" /> } />
+          <Route path="/coastal-range" render={ () => <Weather city={this.state.weather} /> } />
         </div>
     </BrowserRouter>
     );

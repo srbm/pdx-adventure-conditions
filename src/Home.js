@@ -1,14 +1,22 @@
 import React from 'react';
-import { Jumbotron } from 'react-bootstrap';
+import { Jumbotron, ListGroup, ListGroupItem } from 'react-bootstrap';
 import MainNav from './components/MainNav';
 
-const Home = () => {
+const Home = props => {
+  let weather = props.weather;
   return (
-    <Jumbotron>
-      <h1>Where's Your Next Adventure?</h1>
-      <p>Select the area where you are going to see what the weather is like.</p>
+    <div>
+      <Jumbotron>
+        <h1>Where's Your Next Adventure?</h1>
+        <h2>Portland, Oregon Weather</h2>
+        <ListGroup>
+          <ListGroupItem header="Temperature">{weather.temp}&#8457;</ListGroupItem>
+          <ListGroupItem header="Outlook">{weather.weather}</ListGroupItem>
+          <ListGroupItem header="Wind Speed">{weather.wind} mph</ListGroupItem>
+        </ListGroup>
+      </Jumbotron>
       <MainNav />
-    </Jumbotron>
+    </div>
   );
 }
 

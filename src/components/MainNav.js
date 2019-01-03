@@ -8,7 +8,7 @@ const MainNav = () => {
       <NavItem eventKey={2} href="the-gorge">The Gorge</NavItem>
       <NavItem eventKey={3} href="mt-hood">Mt Hood</NavItem>
       <NavItem eventKey={4} href="the-coast">The Coast</NavItem>
-      <NavItem eventKey={5} href="coast-range">Coastal Range</NavItem>
+      <NavItem eventKey={5} href="coastal-range">Coastal Range</NavItem>
     </Nav>
   );
 }

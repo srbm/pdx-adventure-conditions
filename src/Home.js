@@ -8,7 +8,7 @@ const Home = props => {
     <div>
       <Jumbotron>
         <h1>Where's Your Next Adventure?</h1>
-        <h2>Portland, Oregon Weather</h2>
+        <h2>Portland, Oregon</h2>
         <ListGroup>
           <ListGroupItem header="Temperature">{weather.temp}&#8457;</ListGroupItem>
           <ListGroupItem header="Outlook">{weather.weather}</ListGroupItem>

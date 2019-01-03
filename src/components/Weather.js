@@ -1,14 +1,16 @@
 import React from 'react';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 const Weather = props => {
-  console.log(props);
-  let weather = props.data;
-
+  let weather = props.latLong;
   return (
-    <div className="weather">
-      <h3>Temperature: </h3><p>{weather}</p>
-      <h3>Outlook: </h3><p></p>
-      <h3>Wind Speed: </h3><p></p>
+    <div>
+      <h2>{props.header}</h2>
+      <ListGroup>
+        <ListGroupItem header="Temperature">{weather.temp}&#8457;</ListGroupItem>
+        <ListGroupItem header="Outlook">{weather.weather}</ListGroupItem>
+        <ListGroupItem header="Wind Speed">{weather.wind} mph</ListGroupItem>
+      </ListGroup>
     </div>
   );
 }

@@ -44,11 +44,26 @@ class App extends Component {
         <div className="App">
           <Header />
           <Route exact path="/" render={ () => <Home weather={this.state.weather} />} />
-          <Route path="/mt-st-helens" render={ () => <Weather city="mtStHelens" /> } />
-          <Route path="/the-gorge" render={ () => <Weather city="theGorge" /> } />
-          <Route path="/mt-hood" render={ () => <Weather city="mtHood" /> } />
-          <Route path="/the-coast" render={ () => <Weather city="theCoast" /> } />
-          <Route path="/coastal-range" render={ () => <Weather city={this.state.weather} /> } />
+          <Route path="/mt-st-helens" render={ () =>
+            <Weather latLong={this.state.weather}
+                     header="Mt St Helens"/>
+                   } />
+          <Route path="/the-gorge" render={ () =>
+            <Weather latLong={this.state.weather}
+                     header="The Gorge"/>
+                   } />
+          <Route path="/mt-hood" render={ () =>
+            <Weather latLong={this.state.weather}
+                     header="Mt Hood" />
+                   } />
+          <Route path="/the-coast" render={ () =>
+            <Weather latLong={this.state.weather}
+                     header="The Coast" />
+                   } />
+          <Route path="/coastal-range" render={ () =>
+            <Weather latLong={this.state.weather}
+                     header="Coastal Range" />
+                   } />
         </div>
     </BrowserRouter>
     );

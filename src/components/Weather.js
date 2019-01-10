@@ -8,7 +8,7 @@ const Weather = props => {
       <h2>{props.header}</h2>
       <ListGroup>
         <ListGroupItem header="Temperature">{weather.temp}&#8457;</ListGroupItem>
-        <ListGroupItem header="Outlook">{weather.weather}</ListGroupItem>
+        <ListGroupItem header="Outlook">{weather.desc}</ListGroupItem>
         <ListGroupItem header="Wind Speed">{weather.wind} mph</ListGroupItem>
       </ListGroup>
     </div>

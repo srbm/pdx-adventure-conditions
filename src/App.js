@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
@@ -6,9 +7,12 @@ import axios from 'axios';
 
 import Home from './Home';
 import Weather from './components/Weather';
+import MtStHelens from './components/MtStHelens';
+
+
+
 
 class App extends Component {
-
   constructor() {
     super();
     this.state = {
@@ -19,15 +23,16 @@ class App extends Component {
 
   componentDidMount() {
     this.returnWeather();
+
   }
 
   returnWeather = (city = 'Portland') => {
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c2c5b71bef67c3f0581cecfe4a7db318&units=imperial`)
+    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_OWM_API1}&units=imperial`)
       .then(response => {
         this.setState({
           weather: {
             temp: response.data.main.temp,
-            weather: response.data.weather[0].description,
+            desc: response.data.weather[0].description,
             wind: response.data.wind.speed,
           },
           loading: false
@@ -43,9 +48,15 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Header />
-          <Route exact path="/" render={ () => <Home weather={this.state.weather} />} />
+          <Route exact path="/" render={ () =>
+            (this.state.loading)
+            ? <div>Loading</div>
+            : <Home weather={this.state.weather} />} />
+
+
           <Route path="/mt-st-helens" render={ () =>
-            <Weather latLong={this.state.weather}
+            <MtStHelens lat={46.130836}
+                     lon={-122.170973}
                      header="Mt St Helens"/>
                    } />
           <Route path="/the-gorge" render={ () =>

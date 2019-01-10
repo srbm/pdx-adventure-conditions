@@ -7,7 +7,6 @@ import axios from 'axios';
 
 import Home from './Home';
 import Weather from './components/Weather';
-import MtStHelens from './components/MtStHelens';
 
 
 
@@ -55,24 +54,28 @@ class App extends Component {
 
 
           <Route path="/mt-st-helens" render={ () =>
-            <MtStHelens lat={46.130836}
+            <Weather lat={46.130836}
                      lon={-122.170973}
                      header="Mt St Helens"/>
                    } />
           <Route path="/the-gorge" render={ () =>
-            <Weather latLong={this.state.weather}
+            <Weather lat={45.661201}
+                     lon={ -121.894989}
                      header="The Gorge"/>
                    } />
           <Route path="/mt-hood" render={ () =>
-            <Weather latLong={this.state.weather}
+            <Weather lat={45.301499}
+                     lon={-121.747544}
                      header="Mt Hood" />
                    } />
           <Route path="/the-coast" render={ () =>
-            <Weather latLong={this.state.weather}
+            <Weather lat={45.828411}
+                     lon={-123.961235}
                      header="The Coast" />
                    } />
           <Route path="/coastal-range" render={ () =>
-            <Weather latLong={this.state.weather}
+            <Weather lat={45.517953}
+                     lon={-123.595825}
                      header="Coastal Range" />
                    } />
         </div>

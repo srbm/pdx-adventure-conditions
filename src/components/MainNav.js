@@ -1,14 +1,15 @@
 import React from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const MainNav = () => {
   return (
     <Nav bsStyle="pills" justified>
-      <NavItem eventKey={1} href="/mt-st-helens">Mt St Helens</NavItem>
-      <NavItem eventKey={2} href="the-gorge">The Gorge</NavItem>
-      <NavItem eventKey={3} href="mt-hood">Mt Hood</NavItem>
-      <NavItem eventKey={4} href="the-coast">The Coast</NavItem>
-      <NavItem eventKey={5} href="coastal-range">Coastal Range</NavItem>
+      <LinkContainer eventKey={1} to="/mt-st-helens"><NavItem>Mt St Helens</NavItem></LinkContainer>
+      <LinkContainer eventKey={2} to="/the-gorge"><NavItem>The Gorge</NavItem></LinkContainer>
+      <LinkContainer eventKey={3} to="/mt-hood"><NavItem>Mt Hood</NavItem></LinkContainer>
+      <LinkContainer eventKey={4} to="/the-coast"><NavItem>The Coast</NavItem></LinkContainer>
+      <LinkContainer eventKey={5} to="/coastal-range"><NavItem>Coastal Range</NavItem></LinkContainer>
     </Nav>
   );
 }

@@ -8,7 +8,8 @@ class MtStHelens extends Component {
   constructor() {
     super();
     this.state = {
-      weather: {}
+      weather: {},
+      loading: true
     };
   }
 
@@ -37,11 +38,15 @@ class MtStHelens extends Component {
     return (
       <div>
         <h2>{this.props.header}</h2>
-        <ListGroup>
-          <ListGroupItem header="Temperature">{this.state.weather.temp}&#8457;</ListGroupItem>
-          <ListGroupItem header="Outlook">{this.state.weather.desc}</ListGroupItem>
-          <ListGroupItem header="Wind Speed">{this.state.weather.wind} mph</ListGroupItem>
-        </ListGroup>
+        {
+          (this.state.loading)
+          ? <div>Loading...</div>
+          : <ListGroup>
+              <ListGroupItem header="Temperature">{this.state.weather.temp}&#8457;</ListGroupItem>
+              <ListGroupItem header="Outlook">{this.state.weather.desc}</ListGroupItem>
+              <ListGroupItem header="Wind Speed">{this.state.weather.wind} mph</ListGroupItem>
+            </ListGroup>
+      }
       </div>
     );
   }

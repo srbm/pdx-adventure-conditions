@@ -1,0 +1,31 @@
+@import 'palette.scss';
+
+.App {
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  border: 2px solid $color3;
+  border-radius: 5px;
+  padding-bottom: 5px;
+  background-color: $color4;
+}
+header>h1 {
+  cursor: pointer;
+}
+ .nav {
+   margin-top: 20px;
+
+ }
+ .nav>li>a {
+   color: black;
+   background-color: $color1;
+   font-size: 20px;
+   margin: 0 2px;
+ }
+ .nav>li>a:hover {
+   background-color: $color2;
+ }
+ .nav-pills>li.active>a,
+ .nav-pills>li.active>a:focus {
+   background-color: $color3;
+ }

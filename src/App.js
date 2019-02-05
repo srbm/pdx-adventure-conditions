@@ -22,7 +22,6 @@ class App extends Component {
 
   componentDidMount() {
     this.returnWeather();
-
   }
 
   returnWeather = (city = 'Portland') => {

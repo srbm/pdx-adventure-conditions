@@ -1,9 +1,11 @@
 import React from 'react';
 import { Jumbotron, ListGroup, ListGroupItem } from 'react-bootstrap';
 import MainNav from './components/MainNav';
+import Map from './components/Map';
 
 const Home = props => {
   let weather = props.weather;
+
   return (
     <div>
       <Jumbotron>
@@ -15,6 +17,7 @@ const Home = props => {
           <ListGroupItem header="Wind Speed">{weather.wind} mph</ListGroupItem>
         </ListGroup>
       </Jumbotron>
+      <Map />
       <MainNav />
     </div>
   );

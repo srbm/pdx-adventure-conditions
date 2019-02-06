@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import L from 'leaflet';
+import OWM from 'leaflet-openweathermap';
 
 
 
 class Map extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {}
   }
 
   componentDidMount() {
-    var map = L.map('home-map').setView([45.536951, -122.649971], 12);
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
-      id: 'mapbox.streets',
-      accessToken: process.env.REACT_APP_MAPBOX_API1
-    }).addTo(map);
+    var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18, attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>' });
+
+    var rain = L.OWM.rain({showLegend: false, opacity: 0.6, appId: process.env.REACT_APP_OWM_API1 });
+    var city = L.OWM.current({progressControl: false, temperatureUnit: 'F', temperatureDigits: 0, });
+
+    var map = L.map('home-map', { center: new L.LatLng(this.props.lat, this.props.lon), zoom: 10, layers: [osm] });
+    var baseMaps = { "OSM Standard": osm };
+    var overlayMaps = { "Rain": rain, "Cities": city };
+    L.control.layers(baseMaps, overlayMaps).addTo(map);
   }
   render() {
     return (

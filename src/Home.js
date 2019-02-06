@@ -17,7 +17,7 @@ const Home = props => {
           <ListGroupItem header="Wind Speed">{weather.wind} mph</ListGroupItem>
         </ListGroup>
       </Jumbotron>
-      <Map />
+      <Map lat={45.537} lon={-122.6499} />
       <MainNav />
     </div>
   );

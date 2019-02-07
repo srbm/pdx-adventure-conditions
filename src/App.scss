@@ -1,19 +1,22 @@
 @import 'palette.scss';
+@import 'fonts.scss';
+
 
 .App {
   text-align: center;
-  width: 75%;
-  margin: 0 auto;
-  border: 2px solid $color3;
-  border-radius: 5px;
-  padding-bottom: 5px;
-  background-color: $color4;
+  font-family: 'NationalPark-Outline';
+  text-transform: uppercase;
+  margin: 30px 50px 0;
+  padding: 25px;
+  background-color: $color6;
+  border-radius: 50px;
 }
 header {
   margin-bottom: 20px;
 }
 header>h1 {
   cursor: pointer;
+  font-size: 52px;
 }
  .nav {
    margin-top: 20px;
@@ -23,6 +26,8 @@ header>h1 {
    color: black;
    background-color: $color1;
    font-size: 20px;
+   font-family: 'NationalPark-Heavy';
+
    margin: 0 2px;
  }
  .nav>li>a:hover {
@@ -31,15 +36,51 @@ header>h1 {
  .nav-pills>li.active>a,
  .nav-pills>li.active>a:focus {
    background-color: $color3;
+   font-family: 'NationalPark-Heavy';
  }
  .jumbotron {
-   padding-top: 28px;
-   padding-bottom: 28px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   background-color: $color6;
+ }
+ div>h2 {
+   font-size: 50px;
  }
  .flex-container {
    display: flex;
  }
+ .list-group {
+   font-family: "NationalPark-Heavy";
+   margin-right: 10px;
+   margin-left: -10px;
+   border: 1px solid grey;
+   border-radius: 30px;
+   padding-top: 40px;
+ }
+ .list-group-item {
+   background-color: $color6;
+   border-color: $color6;
+   &>h4 {
+     text-shadow: none;
+     border-bottom: 1px solid grey;
+   }
+   &>p {
+     font-size: 16px;
+     text-shadow: none;
+   }
+ }
 #home-map {
   height: 320px;
   width: 100%;
+  border-radius: 30px;
+}
+
+
+#sign-post {
+   width: 0;
+   height: 40vh;
+   border-left: 30px solid $color6;
+   border-right: 30px solid $color6;
+   position: absolute;
+   left: 50%;
 }

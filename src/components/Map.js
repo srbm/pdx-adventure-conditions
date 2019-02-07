@@ -17,11 +17,11 @@ class Map extends Component {
     var rain =
       L.OWM.rain({showLegend: false, opacity: 0.6, appId: process.env.REACT_APP_OWM_API1 }),
       snow = L.OWM.snow({opacity: 0.6, appId: process.env.REACT_APP_OWM_API1})
-    var city = L.OWM.current({temperatureUnit: 'F', temperatureDigits: 0, appId: process.env.REACT_APP_OWM_API1 });
+    //var city = L.OWM.current({temperatureUnit: 'F', temperatureDigits: 0, appId: process.env.REACT_APP_OWM_API1 });
 
     var map = L.map('home-map', { center: new L.LatLng(this.props.lat, this.props.lon), zoom: 10, layers: [osm] });
     var baseMaps = { "Open Street Map": osm };
-    var overlayMaps = { "Rain": rain, "Snow": snow, "Outlook": city };
+    var overlayMaps = { "Rain": rain, "Snow": snow };
     map.addLayer(rain);
     L.control.layers(baseMaps, overlayMaps, {collapsed: false}).addTo(map);
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
+import Map from './Map'
 
 class MtStHelens extends Component {
 
@@ -41,11 +42,14 @@ class MtStHelens extends Component {
         {
           (this.state.loading)
           ? <div>Loading...</div>
-          : <ListGroup>
-              <ListGroupItem header="Temperature">{this.state.weather.temp}&#8457;</ListGroupItem>
-              <ListGroupItem header="Outlook">{this.state.weather.desc}</ListGroupItem>
-              <ListGroupItem header="Wind Speed">{this.state.weather.wind} mph</ListGroupItem>
-            </ListGroup>
+          : <div className="flex-container">
+              <ListGroup>
+                <ListGroupItem header="Temperature">{this.state.weather.temp}&#8457;</ListGroupItem>
+                <ListGroupItem header="Outlook">{this.state.weather.desc}</ListGroupItem>
+                <ListGroupItem header="Wind Speed">{this.state.weather.wind} mph</ListGroupItem>
+              </ListGroup>
+              <Map lat={this.props.lat} lon={this.props.lon} />
+            </div>
       }
       </div>
     );

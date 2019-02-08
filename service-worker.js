@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/pdx-adventure-conditions/precache-manifest.b0b6d51ac8bc62b52bd3ee44ae18cb80.js"
+  "/pdx-adventure-conditions/precache-manifest.6a11961bd22b889631ca8c602ead581d.js"
 );
 
 workbox.clientsClaim();

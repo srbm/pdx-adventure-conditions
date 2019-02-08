@@ -19,7 +19,7 @@ class MtStHelens extends Component {
   }
 
   returnLatLonWeather = (lat, lon) => {
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OWM_API1}&units=imperial`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OWM_API1}&units=imperial`)
       .then(response => {
         this.setState({
           weather: {

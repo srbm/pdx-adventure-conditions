@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   returnWeather = (city = 'Portland') => {
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_OWM_API1}&units=imperial`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_OWM_API1}&units=imperial`)
       .then(response => {
         this.setState({
           weather: {
@@ -46,7 +46,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Header />
-          <Route exact path="/" render={ () =>
+          <Route path="/pdx-adventure-conditions" render={ () =>
             (this.state.loading)
             ? <div>Loading</div>
             : <Home weather={this.state.weather} />} />

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Jumbotron, ListGroup, ListGroupItem } from 'react-bootstrap';
-import MainNav from './components/MainNav';
 import Map from './components/Map';
 
 const Home = props => {

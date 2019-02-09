@@ -1,8 +1,10 @@
 @fontface {
   font-family: 'NP Outline';
-  src:url('fonts/NationalPark-Outline.otf');
+  src: url('fonts/NationalPark-Outline.woff'),
+    url('fonts/NationalPark-Outline.otf');
 }
 @fontface {
   font-family: 'NP Bold';
-  src: url('fonts/NationalPark-Heavy.otf');
+  src: url('fonts/NationalPark-Heavy.woff'), 
+    url('fonts/NationalPark-Heavy.otf');
 }

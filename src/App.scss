@@ -4,31 +4,57 @@
 
 .App {
   text-align: center;
-  font-family: 'NationalPark-Outline';
+  font-family: 'NationalPark-Outline', sans-serif;
   text-transform: uppercase;
-  margin: 30px 50px 0;
-  padding: 25px;
   background-color: $color6;
   border-radius: 50px;
+  margin: 0 2%;
+  padding-bottom: 40px;
+  @media (min-width: 450px) {
+    margin: 30px 50px 0;
+    padding: 25px;
+  }
 }
+
 header {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  @media (min-width: 450px) {
+    margin-bottom: 20px;
+  }
 }
 header>h1 {
   cursor: pointer;
-  font-size: 52px;
+  font-size: 32px;
+  @media (min-width: 450px) {
+    font-size: 52px;
+  }
 }
  .nav {
    margin-top: 20px;
+   display: flex;
+   @media (min-width: 450px) {
+     display: block;
+   }
+ }
+ .nav-justified>li {
+   @media (min-width: 450px) {
+     margin: 5px 0;
 
+   }
+ }
+ .nav-pills>li+li {
+   margin-left: 0;
  }
  .nav>li>a {
    color: black;
-   background-color: $color1;
-   font-size: 20px;
-   font-family: 'NationalPark-Heavy';
-
-   margin: 0 2px;
+   background-color: $color2;
+   font-size: 12px;
+   font-family: 'NationalPark-Heavy', sans-serif;
+   margin: 0;
+   @media (min-width: 450px) {
+     margin: 0 2px;
+     font-size: 20px;
+   }
  }
  .nav>li>a:hover {
    background-color: $color2;
@@ -36,7 +62,7 @@ header>h1 {
  .nav-pills>li.active>a,
  .nav-pills>li.active>a:focus {
    background-color: $color3;
-   font-family: 'NationalPark-Heavy';
+   font-family: 'NationalPark-Heavy', sans-serif;
  }
  .jumbotron {
    padding-top: 5px;
@@ -44,25 +70,37 @@ header>h1 {
    background-color: $color6;
  }
  div>h2 {
-   font-size: 50px;
+   font-size: 30px;
+   margin-top: 10px;
+   @media (min-width: 450px) {
+     font-size: 50px;
+   }
  }
  .flex-container {
-   display: flex;
+   display: block;
+   @media (min-width: 450px) {
+     display: flex;
+   }
  }
  .list-group {
-   font-family: "NationalPark-Heavy";
+   font-family: "NationalPark-Heavy", sans-serif;
    margin-right: 10px;
-   margin-left: -10px;
-   border: 1px solid grey;
+   margin-left: 10px;
+   margin-bottom: 10px;
+   border: 1px solid #ececec;
    border-radius: 30px;
-   padding-top: 40px;
+   padding-top: 20px;
+   padding-bottom: 22px;
+   @media (min-width: 450px) {
+     margin-left: -10px;
+     padding-top: 50px;
+   }
  }
  .list-group-item {
    background-color: $color6;
    border-color: $color6;
    &>h4 {
-     text-shadow: none;
-     border-bottom: 1px solid grey;
+     border-bottom: 1px solid #ececec;
    }
    &>p {
      font-size: 16px;
@@ -71,16 +109,28 @@ header>h1 {
  }
 #home-map {
   height: 320px;
-  width: 100%;
   border-radius: 30px;
+  margin: 0 10px;
+  @media (min-width: 450px) {
+    width: 100%;
+  }
 }
-
-
 #sign-post {
    width: 0;
    height: 40vh;
    border-left: 30px solid $color6;
    border-right: 30px solid $color6;
    position: absolute;
-   left: 50%;
+   left: 43%;
+   @media (min-width: 450px) {
+    left: 48%;
+   }
+}
+#woodland-tufts {
+  position: absolute;
+  bottom: 0;
+  height: 75px;
+  border-left: 20px solid #567E3A;
+  right: 20px solid #567E3A;
+  bottom: 20px solid #567E3A;
 }

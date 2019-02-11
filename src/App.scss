@@ -126,11 +126,33 @@ header>h1 {
     left: 48%;
    }
 }
-#woodland-tufts {
+#grass1, #grass2 {
   position: absolute;
   bottom: 0;
   height: 75px;
-  border-left: 20px solid #567E3A;
-  right: 20px solid #567E3A;
-  bottom: 20px solid #567E3A;
+  margin-left: 10px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 120px solid #567E3A;
+}
+#grass2 {
+  margin-left: -40px;
+}
+#grass1:before, #grass2:before {
+  content: '';
+  position: absolute;
+  right: 7px;
+  height: 75px;
+  border-left: 1px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 120px solid #567E3A;
+}
+#grass1:after, #grass2:after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  height: 75px;
+  border-left: 25px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 120px solid #567E3A;
 }

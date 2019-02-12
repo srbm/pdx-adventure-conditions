@@ -1,7 +1,13 @@
 @import 'palette.scss';
 @import 'fonts.scss';
 
-
+html {
+  background: url('imgs/firs-fog-forest-6858.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+body {
+  background: transparent;
+}
 .App {
   text-align: center;
   font-family: 'NationalPark-Outline', sans-serif;
@@ -10,6 +16,7 @@
   border-radius: 50px;
   margin: 0 2%;
   padding-bottom: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0, 0.8);
   @media (min-width: 450px) {
     margin: 30px 50px 0;
     padding: 25px;
@@ -87,10 +94,9 @@ header>h1 {
    margin-right: 10px;
    margin-left: 10px;
    margin-bottom: 10px;
-   border: 1px solid #ececec;
    border-radius: 30px;
-   padding-top: 20px;
-   padding-bottom: 22px;
+   padding: 20px 15px;
+   box-shadow: inset 0 0 10px rgba(0,0,0, 0.8);
    @media (min-width: 450px) {
      margin-left: -10px;
      padding-top: 50px;
@@ -104,13 +110,13 @@ header>h1 {
    }
    &>p {
      font-size: 16px;
-     text-shadow: none;
    }
  }
 #home-map {
   height: 320px;
   border-radius: 30px;
   margin: 0 10px;
+  box-shadow: inset 3px 3px 2px rgba(0, 0, 0, 0.5);
   @media (min-width: 450px) {
     width: 100%;
   }
@@ -120,6 +126,7 @@ header>h1 {
    height: 40vh;
    border-left: 30px solid $color6;
    border-right: 30px solid $color6;
+   box-shadow: 0 20px 20px rgba(0,0,0, 0.8);
    position: absolute;
    left: 43%;
    @media (min-width: 450px) {
